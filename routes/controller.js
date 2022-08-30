@@ -28,8 +28,30 @@ const CreateArtistForm = async (req, res)=> {
     }
 };
 
+//GET ARTIST DATA
+const getArtistData = async (req, res)=> {
+    try {     
+        const allData = await artistForm.find()
+        return res.json(allData);
+    } catch (error) {
+        return res.json(error);
+    }
+}
+
+//GET SONG DATA
+const getSongData = async (req, res)=> {
+    try {
+        const allData = await songForm.find()
+        return res.json(allData);
+    } catch (error) {
+        return res.json(error);
+    }
+}
+
 
 module.exports = {
     CreateSongForm,
-    CreateArtistForm
+    CreateArtistForm,
+    getArtistData,
+    getSongData
 }

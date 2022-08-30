@@ -6,6 +6,7 @@ const songSchema = new mongoose.Schema(
     dateReleased: { type: String, required: true },
     artWork: { type: String, required: true },
     artists: { type: String, required: true },
+    // user_Id: { type:mongoose.Schema.Types.ObjectId, ref: "ArtistsData", required: true }
   },
   {
     timestamps: true,
