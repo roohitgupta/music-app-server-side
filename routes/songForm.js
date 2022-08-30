@@ -9,7 +9,13 @@ const createForm = async (req, res)=> {
 
     try {
         const savedForm = await newForm.save()
+        return res.status(200).json(savedForm);
     } catch (error) {
-        return res.send(500).json(error);
+        return res.status(500).json(error);
     }
 };
+
+
+module.exports = {
+    createForm
+}
