@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
-const { createForm } = require("./routes/songForm")
+const { CreateSongForm, CreateArtistForm } = require("./routes/controller")
 
 app.use(cors());
 dotenv.config();
@@ -13,7 +13,8 @@ const formRouter = express.Router();
 
 
 app.use("/api", formRouter);
-formRouter.post("/form", createForm)
+formRouter.post("/song/form", CreateSongForm)
+formRouter.post("/artist/form", CreateArtistForm)
 
 
 
